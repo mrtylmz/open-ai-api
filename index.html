@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAI Sandbox</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">CognitumBOT</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item" id="nav-chatgpt">
+                        <a class="nav-link" href="index.html">GPT 3.5-Turbo</a>
+                    </li>
+                    <li class="nav-item" id="nav-dalle">
+                        <a class="nav-link" href="dalle.html">DALLE</a>
+                    </li>
+                    <li class="nav-item" id="nav-dalle">
+                        <a class="nav-link" href="llama.html">LLAMA</a>
+                    </li>
+                    <li class="nav-item" id="nav-dalle">
+                        <a class="nav-link" href="cognitum.html">Cognitum LLM</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container p-3 my-3 border">
+        <p class="fw-bolder">Given the following SQL tables, your job is to write queries given a user’s request.</p>
+        
+
+<p class="text-center text-primary">
+        CREATE TABLE Orders (
+          OrderID int,
+          CustomerID int,
+          OrderDate datetime,
+          OrderTime varchar(8),
+          PRIMARY KEY (OrderID)
+        );</p>
+       
+        <p class="text-center text-primary">
+        CREATE TABLE OrderDetails (
+          OrderDetailID int,
+          OrderID int,
+          ProductID int,
+          Quantity int,
+          PRIMARY KEY (OrderDetailID)
+        );
+    </p>
+        
+    <p class="text-center text-primary">
+        CREATE TABLE Products (
+          ProductID int,
+          ProductName varchar(50),
+          Category varchar(50),
+          UnitPrice decimal(10, 2),
+          Stock int,
+          PRIMARY KEY (ProductID)
+        );
+    </p>
+        
+    <p class="text-center text-primary">
+        CREATE TABLE Customers (
+          CustomerID int,
+          FirstName varchar(50),
+          LastName varchar(50),
+          Email varchar(100),
+          Phone varchar(20),
+          PRIMARY KEY (CustomerID)
+        );</p></div>
+
+
+
+
+
+    <div class="container mt-4">
+
+  
+        <h1>Sql Generator</h1>
+        <form id="chatgpt-form">
+            <div class="mb-3">
+                <label for="chatgpt-prompt" class="form-label">Enter your prompt:</label>
+                <input type="text" class="form-control" id="chatgpt-prompt" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div class="mt-4" id="chatgpt-result">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <div id="please-wait" class="d-none">
+        <div class="overlay"></div>
+        <div class="popup">
+            <img src="https://media.tenor.com/joLYNfFQGDgAAAAj/loading.gif" alt="Loading" class="loading-gif">
+            <h5>Awaiting Response...</h5>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
