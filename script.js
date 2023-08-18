@@ -1,4 +1,4 @@
-const openAIBearerToken = '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';
+const openAIBearerToken = '';
 
 document.addEventListener('DOMContentLoaded', () => {
     const chatgptForm = document.getElementById('chatgpt-form');
